@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        user-scalable=no">
+
+    <meta name="theme-color" content="#0c3025">
+
+    <title>
+        Undangan Khitan - Xleand Alvaro Bilmahera
+    </title>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background: #f4f0e6;
+
+            color: #26352e;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           LOCK SCROLL
+        ===================================================== */
+
+        body.scroll-lock {
+
+            overflow: hidden !important;
+
+            height: 100vh !important;
+
+            height: 100svh !important;
+
+            overscroll-behavior: none;
+
+            touch-action: none;
+        }
+
+
+        /* =====================================================
+           AUDIO
+        ===================================================== */
+
+        #backsound {
+            display: none;
+        }
+
+
+        /* =====================================================
+           COVER
+        ===================================================== */
+
+        .cover {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            width: 100%;
+
+            height: 100vh;
+
+            height: 100svh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    rgba(12, 48, 37, 0.97),
+                    rgba(12, 48, 37, 0.97)
+                );
+
+            color: white;
+
+            z-index: 99999;
+
+            transition:
+                opacity 0.7s ease,
+                visibility 0.7s ease;
+        }
+
+
+        /* =====================================================
+           COVER SETELAH DIBUKA
+        ===================================================== */
+
+        .cover.dibuka {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           COVER BOX
+        ===================================================== */
+
+        .cover-box {
+
+            width: 100%;
+
+            max-width: 650px;
+
+            padding: 20px;
+
+            animation:
+                muncul 1.2s ease;
+        }
+
+
+        /* =====================================================
+           BISMILLAH
+        ===================================================== */
+
+        .bismillah {
+
+            font-size: 32px;
+
+            color: #d7b86a;
+
+            margin-bottom: 25px;
+
+            line-height: 1.8;
+
+            direction: rtl;
+        }
+
+
+        /* =====================================================
+           JUDUL COVER
+        ===================================================== */
+
+        .cover h4 {
+
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            font-weight: normal;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =====================================================
+           NAMA
+        ===================================================== */
+
+        .cover h1 {
+
+            font-size: 56px;
+
+            color: #d7b86a;
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================================================
+           TEXT COVER
+        ===================================================== */
+
+        .cover p {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 15px 32px;
+
+            background: #d7b86a;
+
+            color: #173d30;
+
+            border: none;
+
+            border-radius: 50px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            -webkit-tap-highlight-color:
+                transparent;
+
+            touch-action: manipulation;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .button:hover {
+
+            background: white;
+
+            transform:
+                scale(1.04);
+        }
+
+
+        .button:active {
+
+            transform:
+                scale(0.96);
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        section {
+
+            width: 100%;
+
+            padding:
+                80px 20px;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           TITLE
+        ===================================================== */
+
+        .title {
+
+            font-size: 34px;
+
+            color: #174b39;
+
+            margin-bottom: 15px;
+
+            line-height: 1.3;
+        }
+
+
+        /* =====================================================
+           GARIS
+        ===================================================== */
+
+        .garis {
+
+            width: 70px;
+
+            height: 3px;
+
+            background: #d7b86a;
+
+            margin:
+                0 auto 35px;
+        }
+
+
+        /* =====================================================
+           PEMBUKA
+        ===================================================== */
+
+        .pembuka {
+
+            background: #fffdf8;
+        }
+
+
+        /* =====================================================
+           TEKS ARAB
+        ===================================================== */
+
+        .arab {
+
+            font-size: 22px;
+
+            color: #174b39;
+
+            line-height: 2.3;
+
+            margin-bottom: 35px;
+
+            text-align: center;
+
+            direction: rtl;
+
+            unicode-bidi: plaintext;
+
+            font-weight: normal;
+        }
+
+
+        /* =====================================================
+           TEKS INDONESIA
+        ===================================================== */
+
+        .teks-pembuka {
+
+            font-size: 18px;
+
+            line-height: 2;
+
+            color: #26352e;
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin:
+                0 auto;
+        }
+
+
+        /* =====================================================
+           PROFIL
+        ===================================================== */
+
+        .profil {
+
+            background: #174b39;
+
+            color: white;
+        }
+
+
+        .profil .title {
+
+            color: #d7b86a;
+        }
+
+
+        .nama {
+
+            font-size: 42px;
+
+            color: #d7b86a;
+
+            margin:
+                20px 0;
+
+            line-height: 1.3;
+        }
+
+
+        .profil p {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           ACARA
+        ===================================================== */
+
+        .acara {
+
+            background: #f4f0e6;
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .card {
+
+            background: white;
+
+            padding: 30px;
+
+            margin:
+                20px auto;
+
+            max-width: 500px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid #ded2ad;
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.08
+                );
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-5px);
+        }
+
+
+        /* =====================================================
+           ICON
+        ===================================================== */
+
+        .icon {
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           CARD TITLE
+        ===================================================== */
+
+        .card h3 {
+
+            color: #174b39;
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =====================================================
+           CARD TEXT
+        ===================================================== */
+
+        .card p {
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           COUNTDOWN
+        ===================================================== */
+
+        .countdown {
+
+            background: #fffdf8;
+        }
+
+
+        .countdown
+        .container > p {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           TIMER
+        ===================================================== */
+
+        .timer {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+
+        /* =====================================================
+           BOX TIMER
+        ===================================================== */
+
+        .time {
+
+            width: 85px;
+
+            min-height: 85px;
+
+            padding: 15px 5px;
+
+            background: #174b39;
+
+            color: white;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .time span {
+
+            display: block;
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            color: #d7b86a;
+
+            line-height: 1.2;
+        }
+
+
+        .time small {
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+           LOKASI
+        ===================================================== */
+
+        .lokasi {
+
+            background: #174b39;
+
+            color: white;
+        }
+
+
+        .lokasi .title {
+
+            color: #d7b86a;
+        }
+
+
+        .lokasi p {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           PENUTUP
+        ===================================================== */
+
+        .penutup {
+
+            background: #fffdf8;
+        }
+
+
+        .penutup p {
+
+            font-size: 18px;
+
+            line-height: 2;
+        }
+
+
+        .penutup h3 {
+
+            margin-top: 30px;
+
+            color: #174b39;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background: #0c3025;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           ANIMASI
+        ===================================================== */
+
+        @keyframes muncul {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+
+            .cover {
+
+                padding: 15px;
+            }
+
+
+            .cover-box {
+
+                padding: 10px;
+            }
+
+
+            .bismillah {
+
+                font-size: 23px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .cover h4 {
+
+                font-size: 12px;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 15px;
+            }
+
+
+            .cover h1 {
+
+                font-size: 40px;
+
+                line-height: 1.2;
+            }
+
+
+            .cover p {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+            }
+
+
+            .button {
+
+                padding:
+                    14px 27px;
+
+                font-size: 15px;
+            }
+
+
+            section {
+
+                padding:
+                    65px 18px;
+            }
+
+
+            .title {
+
+                font-size: 28px;
+            }
+
+
+            .arab {
+
+                font-size: 19px;
+
+                line-height: 2.35;
+
+                text-align: justify;
+
+                text-align-last: center;
+            }
+
+
+            .teks-pembuka {
+
+                font-size: 16px;
+
+                line-height: 1.9;
+            }
+
+
+            .nama {
+
+                font-size: 32px;
+            }
+
+
+            .card {
+
+                padding:
+                    25px 18px;
+            }
+
+
+            .time {
+
+                width: 75px;
+
+                min-height: 78px;
+            }
+
+
+            .time span {
+
+                font-size: 24px;
+            }
+
+        }
+
+
+        /* =====================================================
+           HP SANGAT KECIL
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+
+            .cover h1 {
+
+                font-size: 34px;
+            }
+
+
+            .bismillah {
+
+                font-size: 20px;
+            }
+
+
+            .cover p {
+
+                font-size: 14px;
+            }
+
+
+            .arab {
+
+                font-size: 18px;
+
+                line-height: 2.3;
+            }
+
+
+            .teks-pembuka {
+
+                font-size: 15px;
+            }
+
+
+            .time {
+
+                width: 68px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="scroll-lock">
+
+
+    <!-- =====================================================
+         BACKSOUND
+         
+         Pastikan file:
+         backsound.mp3
+         
+         berada di folder yang sama dengan index.html
+    ===================================================== -->
+
+    <audio
+        id="backsound"
+        loop
+        preload="auto">
+
+        <source
+            src="backsound.mp4"
+            type="audio/mp4">
+
+        Browser Anda tidak mendukung audio.
+
+    </audio>
+
+
+
+    <!-- =====================================================
+         COVER
+    ===================================================== -->
+
+    <div
+        class="cover"
+        id="cover">
+
+
+        <div class="cover-box">
+
+
+            <!-- BISMILLAH -->
+
+            <div class="bismillah">
+
+                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+
+            </div>
+
+
+            <!-- JUDUL -->
+
+            <h4>
+
+                UNDANGAN KHITAN
+
+            </h4>
+
+
+            <!-- NAMA -->
+
+            <h1>
+
+                Xleand Alvaro Bilmahera
+
+            </h1>
+
+
+            <!-- KETERANGAN -->
+
+            <p>
+
+                Dengan memohon rahmat dan ridho Allah SWT,
+                kami mengundang Bapak/Ibu/Saudara/i
+                untuk hadir dalam acara khitan putra kami.
+
+            </p>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="button"
+                id="bukaUndangan"
+                class="button">
+
+                Buka Undangan
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PEMBUKA
+    ===================================================== -->
+
+    <section
+        class="pembuka"
+        id="undangan">
+
+
+        <div class="container">
+
+
+            <h2 class="title">
+
+                Assalamu'alaikum
+
+            </h2>
+
+
+            <div class="garis"></div>
+
+
+
+            <!-- =================================================
+                 ARAB DULU
+            ================================================= -->
+
+            <div class="arab">
+
+                الْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِيْنَ،
+                وَالْعَاقِبَةُ لِلْمُتَّقِيْنَ،
+                وَلَا عُدْوَانَ إِلَّا عَلَى الظَّالِمِيْنَ.
+
+                نَحْمَدُهُ سُبْحَانَهُ وَتَعَالَى
+                عَلَى نِعَمِهِ الْغَزِيْرَةِ،
+                وَنَشْكُرُهُ عَلَى تَوْفِيْقِهِ وَامْتِنَانِهِ،
+                حَيْثُ أَتَاحَ لَنَا فِى هٰذَا الْيَوْمِ الْمُبَارَكِ
+                أَنْ نَجْتَمِعَ لِلاحْتِفَالِ وَالشُّكْرِ
+                بِمُنَاسَبَةِ خِتَانِ ابْنِنَا الْغَالِي
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INDONESIA SETELAH ARAB
+            ================================================= -->
+
+            <p class="teks-pembuka">
+
+                Dengan penuh rasa syukur kepada Allah SWT,
+                kami mengundang Bapak/Ibu/Saudara/i
+                untuk hadir dalam acara tasyakuran walimatul khitan putra kami.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROFIL
+    ===================================================== -->
+
+    <section class="profil">
+
+
+        <div class="container">
+
+
+            <h2 class="title">
+
+                Putra Kami
+
+            </h2>
+
+
+            <div class="garis"></div>
+
+
+            <div class="nama">
+
+                Xleand Alvaro Bilmahera
+
+            </div>
+
+
+            <p>
+
+                Putra dari pasangan
+
+            </p>
+
+
+            <p>
+
+                <b>
+                    Bapak Subiyono
+                </b>
+
+                <br>
+
+                &
+
+                <br>
+
+                <b>
+                    Ibu Mutoharoh
+                </b>
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WAKTU DAN TEMPAT
+    ===================================================== -->
+
+    <section class="acara">
+
+
+        <div class="container">
+
+
+            <h2 class="title">
+
+                Waktu & Tempat
+
+            </h2>
+
+
+            <div class="garis"></div>
+
+
+
+            <!-- =================================================
+                 TANGGAL
+            ================================================= -->
+
+            <div class="card">
+
+
+                <div class="icon">
+                    📅
+                </div>
+
+
+                <h3>
+
+                    Tanggal
+
+                </h3>
+
+
+                <p>
+
+                    Jumat, 18 September 2026
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 WAKTU
+            ================================================= -->
+
+            <div class="card">
+
+
+                <div class="icon">
+                    ⏰
+                </div>
+
+
+                <h3>
+
+                    Waktu
+
+                </h3>
+
+
+                <p>
+
+                    10.00 WIB
+
+                    <br>
+
+                    Sampai selesai
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TEMPAT
+                 
+                 ALAMAT TIDAK DIUBAH
+            ================================================= -->
+
+            <div class="card">
+
+
+                <div class="icon">
+                    📍
+                </div>
+
+
+                <h3>
+
+                    Tempat
+
+                </h3>
+
+
+                <p>
+
+                    Kediaman Bapak Subiyono
+
+                    <br>
+
+                    Desa Jipang Rt 02 Rw 02
+
+                    <br>
+
+                    Cepu, Blora-Jawa Tengah
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         COUNTDOWN
+    ===================================================== -->
+
+    <section class="countdown">
+
+
+        <div class="container">
+
+
+            <h2 class="title">
+
+                Menuju Hari Acara
+
+            </h2>
+
+
+            <div class="garis"></div>
+
+
+            <p>
+
+                Hitung mundur menuju acara khitan.
+
+            </p>
+
+
+
+            <div class="timer">
+
+
+                <div class="time">
+
+                    <span id="hari">
+                        0
+                    </span>
+
+                    <small>
+                        Hari
+                    </small>
+
+                </div>
+
+
+
+                <div class="time">
+
+                    <span id="jam">
+                        0
+                    </span>
+
+                    <small>
+                        Jam
+                    </small>
+
+                </div>
+
+
+
+                <div class="time">
+
+                    <span id="menit">
+                        0
+                    </span>
+
+                    <small>
+                        Menit
+                    </small>
+
+                </div>
+
+
+
+                <div class="time">
+
+                    <span id="detik">
+                        0
+                    </span>
+
+                    <small>
+                        Detik
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOKASI
+    ===================================================== -->
+
+    <section class="lokasi">
+
+
+        <div class="container">
+
+
+            <h2 class="title">
+
+                Lokasi Acara
+
+            </h2>
+
+
+            <div class="garis"></div>
+
+
+            <!-- ALAMAT TAMPIL TETAP -->
+
+            <p>
+
+                Kediaman Bapak Subiyono
+
+                <br>
+
+                Desa Jipang Rt 02 Rw 02
+
+                <br>
+
+                Cepu, Blora-Jawa Tengah
+
+            </p>
+
+
+            <!-- =================================================
+                 HANYA LINK MAPS YANG DIUBAH
+            ================================================= -->
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=RH37%2B4W3%20Jipang%2C%20Blora%20Regency%2C%20Central%20Java"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button">
+
+                📍 Buka Google Maps
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PENUTUP
+    ===================================================== -->
+
+    <section class="penutup">
+
+
+        <div class="container">
+
+
+            <h2 class="title">
+
+                Terima Kasih
+
+            </h2>
+
+
+            <div class="garis"></div>
+
+
+            <p>
+
+                Merupakan suatu kehormatan dan kebahagiaan
+                bagi kami apabila Bapak/Ibu/Saudara/i
+                berkenan hadir dan memberikan doa restu
+                kepada putra kami.
+
+            </p>
+
+
+            <h3>
+
+                Wassalamu'alaikum
+
+                <br>
+
+                Warahmatullahi Wabarakatuh
+
+            </h3>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        © 2026 Undangan Khitan
+        Xleand Alvaro Bilmahera
+
+    </footer>
+
+
+
+    <script>
+
+
+        /* =====================================================
+           ELEMENT
+        ===================================================== */
+
+        const body =
+            document.body;
+
+
+        const cover =
+            document.getElementById(
+                "cover"
+            );
+
+
+        const tombolBuka =
+            document.getElementById(
+                "bukaUndangan"
+            );
+
+
+        const backsound =
+            document.getElementById(
+                "backsound"
+            );
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        let undanganSudahDibuka =
+            false;
+
+
+        let posisiScroll =
+            0;
+
+
+
+        /* =====================================================
+           KUNCI SCROLL
+           
+           Cara ini dibuat supaya HP juga tidak bisa
+           menggeser halaman sebelum tombol dibuka.
+        ===================================================== */
+
+        function kunciScroll() {
+
+
+            posisiScroll =
+                window.scrollY ||
+                window.pageYOffset ||
+                0;
+
+
+            body.classList.add(
+                "scroll-lock"
+            );
+
+
+            body.style.position =
+                "fixed";
+
+
+            body.style.top =
+                `-${posisiScroll}px`;
+
+
+            body.style.left =
+                "0";
+
+
+            body.style.right =
+                "0";
+
+
+            body.style.width =
+                "100%";
+
+
+        }
+
+
+
+        /* =====================================================
+           BUKA SCROLL
+        ===================================================== */
+
+        function bukaScroll() {
+
+
+            body.classList.remove(
+                "scroll-lock"
+            );
+
+
+            body.style.position =
+                "";
+
+
+            body.style.top =
+                "";
+
+
+            body.style.left =
+                "";
+
+
+            body.style.right =
+                "";
+
+
+            body.style.width =
+                "";
+
+
+            window.scrollTo(
+                0,
+                posisiScroll
+            );
+
+        }
+
+
+
+        /* =====================================================
+           LOCK SAAT HALAMAN DIMUAT
+        ===================================================== */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+
+                window.scrollTo(
+                    0,
+                    0
+                );
+
+
+                kunciScroll();
+
+
+            }
+        );
+
+
+
+        /* =====================================================
+           TOMBOL BUKA UNDANGAN
+        ===================================================== */
+
+        tombolBuka.addEventListener(
+            "click",
+            function () {
+
+
+                /* =============================================
+                   JIKA SUDAH DIBUKA
+                ============================================= */
+
+                if (
+                    undanganSudahDibuka
+                ) {
+
+                    return;
+
+                }
+
+
+                undanganSudahDibuka =
+                    true;
+
+
+
+                /* =============================================
+                   PUTAR MUSIK
+                   
+                   Dipanggil langsung dari event klik supaya
+                   browser HP mengizinkan autoplay.
+                ============================================= */
+
+                backsound.volume =
+                    0.7;
+
+
+                backsound.currentTime =
+                    0;
+
+
+                const musik =
+                    backsound.play();
+
+
+                if (
+                    musik !== undefined
+                ) {
+
+                    musik.catch(
+                        function (error) {
+
+                            console.log(
+                                "Audio tidak dapat diputar:",
+                                error
+                            );
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =============================================
+                   BUKA SCROLL
+                ============================================= */
+
+                bukaScroll();
+
+
+
+                /* =============================================
+                   HILANGKAN COVER
+                ============================================= */
+
+                cover.classList.add(
+                    "dibuka"
+                );
+
+
+                tombolBuka.disabled =
+                    true;
+
+
+
+                /* =============================================
+                   SCROLL KE BAGIAN PERTAMA
+                ============================================= */
+
+                setTimeout(
+                    function () {
+
+
+                        document
+                            .getElementById(
+                                "undangan"
+                            )
+                            .scrollIntoView({
+
+                                behavior:
+                                    "smooth",
+
+                                block:
+                                    "start"
+
+                            });
+
+
+                    },
+                    250
+                );
+
+
+            }
+        );
+
+
+
+        /* =====================================================
+           COUNTDOWN
+           
+           TARGET:
+           
+           Jumat
+           18 September 2026
+           10.00 WIB
+           
+           +07:00 = WIB
+        ===================================================== */
+
+        const tanggalAcara =
+            new Date(
+                "2026-09-18T10:00:00+07:00"
+            ).getTime();
+
+
+
+        /* =====================================================
+           FUNGSI COUNTDOWN
+        ===================================================== */
+
+        function updateCountdown() {
+
+
+            const sekarang =
+                new Date().getTime();
+
+
+            const jarak =
+                tanggalAcara -
+                sekarang;
+
+
+
+            /* =============================================
+               JIKA ACARA SUDAH DIMULAI
+            ============================================= */
+
+            if (
+                jarak <= 0
+            ) {
+
+
+                document.getElementById(
+                    "hari"
+                ).innerHTML =
+                    "0";
+
+
+                document.getElementById(
+                    "jam"
+                ).innerHTML =
+                    "0";
+
+
+                document.getElementById(
+                    "menit"
+                ).innerHTML =
+                    "0";
+
+
+                document.getElementById(
+                    "detik"
+                ).innerHTML =
+                    "0";
+
+
+                document.querySelector(
+                    ".timer"
+                ).innerHTML =
+
+                    "<h3>🎉 Acara Telah Dimulai 🎉</h3>";
+
+
+                return;
+
+            }
+
+
+
+            /* =============================================
+               HARI
+            ============================================= */
+
+            const hari =
+                Math.floor(
+                    jarak /
+                    (
+                        1000 *
+                        60 *
+                        60 *
+                        24
+                    )
+                );
+
+
+
+            /* =============================================
+               JAM
+            ============================================= */
+
+            const jam =
+                Math.floor(
+                    (
+                        jarak %
+                        (
+                            1000 *
+                            60 *
+                            60 *
+                            24
+                        )
+                    )
+                    /
+                    (
+                        1000 *
+                        60 *
+                        60
+                    )
+                );
+
+
+
+            /* =============================================
+               MENIT
+            ============================================= */
+
+            const menit =
+                Math.floor(
+                    (
+                        jarak %
+                        (
+                            1000 *
+                            60 *
+                            60
+                        )
+                    )
+                    /
+                    (
+                        1000 *
+                        60
+                    )
+                );
+
+
+
+            /* =============================================
+               DETIK
+            ============================================= */
+
+            const detik =
+                Math.floor(
+                    (
+                        jarak %
+                        (
+                            1000 *
+                            60
+                        )
+                    )
+                    /
+                    1000
+                );
+
+
+
+            /* =============================================
+               TAMPILKAN
+            ============================================= */
+
+            document.getElementById(
+                "hari"
+            ).innerHTML =
+                hari;
+
+
+            document.getElementById(
+                "jam"
+            ).innerHTML =
+                jam;
+
+
+            document.getElementById(
+                "menit"
+            ).innerHTML =
+                menit;
+
+
+            document.getElementById(
+                "detik"
+            ).innerHTML =
+                detik;
+
+        }
+
+
+
+        /* =====================================================
+           JALANKAN COUNTDOWN
+        ===================================================== */
+
+        updateCountdown();
+
+
+
+        /* =====================================================
+           UPDATE SETIAP DETIK
+        ===================================================== */
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
